@@ -8,10 +8,10 @@ const calcSlice = createSlice({
   },
   reducers: {
     switchTheme(state) {
-      if (state.theme < 3 && state.theme >= 1) {
+      if (state.theme === 1 || state.theme === 2) {
         state.theme += 1;
-      } else {
-        state.theme += 1;
+      } else if (state.theme >= 3) {
+        state.theme = 1;
       }
     },
     setDisplay(state, action) {
