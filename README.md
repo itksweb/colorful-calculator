@@ -1,8 +1,37 @@
-# React + Vite
+# Colorful Calculator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a [Colorful Calculator](https://itksweb.github.io/colorful-calculator/).
 
-Currently, two official plugins are available:
+## Table of contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Overview](#overview)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
+
+## Overview
+
+### Screenshot
+
+![](./screenshot.jpg)
+
+### Links
+
+- Solution URL: [see livr](https://github.com/itksweb/colorful-calculator)
+- Live Site URL: [source code](https://itksweb.github.io/colorful-calculator)
+
+## My process
+
+### Built with
+
+- [React](https://reactjs.org/) - JS library
+
+## Author
+
+- WhatsApp - [here](https://wa.me/2348060719978)
+- LinkedIn - [here](https://www.linkedin.com/in/kingsleyikpefan)
