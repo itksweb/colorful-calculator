@@ -1,3 +1,5 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-is/18.3.0-next-b14d7fa4b-20221209/umd/react-is.production.min.js" integrity="sha512-avzEQw/8oaTD541O8Lx5mlInnomZ6nD2Pd54Whil/TYnUSQwwpeCJOndjWEMSuZ7yItoLOiXVvm885FYoSrspQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="/modules/react.production.min.js"></script>
 {
   "name": "my-calculator",
   "private": true,
