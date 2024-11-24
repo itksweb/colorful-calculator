@@ -1,13 +1,8 @@
-import { useSelector, useDispatch } from "react-redux";
-import { calcActions } from "../store/calcSlice";
+import { useDispatch } from "react-redux";
+import { switchTheme } from "../store/calcSlice";
 
-const header = () => {
-  //const theme = useSelector((state) => state.calc.theme);
+const Header = () => {
   const dispatch = useDispatch();
-
-  const switchTheme = () => {
-    dispatch(calcActions.switchTheme());
-  };
 
   return (
     <header className="">
@@ -20,7 +15,10 @@ const header = () => {
             <span>2</span>
             <span>3</span>
           </span>
-          <div className="theme-switcher" onClick={switchTheme}>
+          <div
+            className="theme-switcher"
+            onClick={() => dispatch(switchTheme())}
+          >
             <span className="theme-switcher-inner"></span>
           </div>
         </div>
@@ -29,4 +27,4 @@ const header = () => {
   );
 };
 
-export default header;
+export default Header;

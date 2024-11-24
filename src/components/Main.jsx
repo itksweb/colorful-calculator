@@ -1,13 +1,14 @@
+import { useSelector } from "react-redux";
 import CalcBtns from "./CalcBtns";
-import Display from "./Display";
 
-const main = () => {
+const Main = () => {
+  const { display } = useSelector((state) => state.calc);
   return (
     <main>
-      <Display />
+      <div className="display">{display}</div>
       <CalcBtns />
     </main>
   );
 };
 
-export default main;
+export default Main;

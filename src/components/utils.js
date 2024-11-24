@@ -1,4 +1,4 @@
-const btnValues = [
+export const btnValues = [
   "7",
   "8",
   "9",
@@ -18,5 +18,3 @@ const btnValues = [
   "reset",
   "=",
 ];
-
-export default btnValues;

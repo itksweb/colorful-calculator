@@ -1,40 +1,40 @@
-import { useSelector, useDispatch } from "react-redux";
-import { calcActions } from "../store/calcSlice";
-import btnValues from "./btnValues";
+import { useDispatch } from "react-redux";
+import {
+  setDisplay,
+  resetDisplay,
+  deleteDisplay,
+  manageDot,
+  solveIt,
+} from "../store/calcSlice";
+import { btnValues } from "./utils";
 
 const CalcBtns = () => {
   const dispatch = useDispatch();
 
-  const uDisplay = (val) => {
-    dispatch(calcActions.setDisplay(val.target.value));
-  };
-  const rDisplay = () => {
-    dispatch(calcActions.resetDisplay());
-  };
-  const dDisplay = () => {
-    dispatch(calcActions.deleteDisplay());
-  };
-  const handleDot = (val) => {
-    dispatch(calcActions.manageDot(val.target.value));
-  };
-  const solve = () => {
-    dispatch(calcActions.solveIt());
-  };
-
   let buttons = btnValues.map((item) => {
-    let myClass = item === "del" || item === "reset" ? "colvar" : undefined;
+    let myClass = "";
     let myFunction = () => {};
-    if (item === "del") {
-      myFunction = dDisplay;
-    } else if (item === "reset") {
-      myFunction = rDisplay;
-    } else if (item === "=") {
-      myFunction = solve;
-    } else if (item === ".") {
-      myFunction = handleDot;
-    } else {
-      myFunction = uDisplay;
+    switch (item) {
+      case "del":
+        myClass = "colvar";
+        myFunction = () => dispatch(deleteDisplay());
+        break;
+      case "reset":
+        myClass = "colvar";
+        myFunction = () => dispatch(resetDisplay());
+        break;
+      case "=":
+        myFunction = () => dispatch(solveIt());
+        break;
+      case ".":
+        myClass = "colvar";
+        myFunction = (val) => dispatch(manageDot(val.target.value));
+        break;
+      default:
+        myFunction = (val) => dispatch(setDisplay(val.target.value));
+        break;
     }
+
     return (
       <input
         type="button"

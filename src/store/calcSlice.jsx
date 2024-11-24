@@ -8,16 +8,14 @@ const calcSlice = createSlice({
   },
   reducers: {
     switchTheme(state) {
-      if (state.theme === 1 || state.theme === 2) {
-        state.theme += 1;
-      } else if (state.theme >= 3) {
-        state.theme = 1;
-      }
+      state.theme === 1 || state.theme === 2
+        ? (state.theme += 1)
+        : (state.theme = 1);
     },
     setDisplay(state, action) {
       let beforeOp = /^(0\.|[1-9][0-9]*\.?)(\d*)\.?(\d*)/g;
-      let afterOp = /([\+\-\*\/])(0\.|[1-9][0-9]*\.?)?(\d*)(?:\.?(\d*))$/g;
-      let op = /[\-\+\*\/]+([\+\*\/])/;
+      let afterOp = /([+\-*/])(0\.|[1-9][0-9]*\.?)?(\d*)(?:\.?(\d*))$/g;
+      let op = /[-+*/]+([+*/])/;
       if (state.display === "0") {
         state.display = action.payload;
       } else {
@@ -58,5 +56,12 @@ const calcSlice = createSlice({
   },
 });
 
-export const calcActions = calcSlice.actions;
+export const {
+  manageDot,
+  switchTheme,
+  setDisplay,
+  resetDisplay,
+  deleteDisplay,
+  solveIt,
+} = calcSlice.actions;
 export default calcSlice.reducer;
