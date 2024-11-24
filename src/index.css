@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   margin: 0;
   padding: 0;
@@ -21,68 +25,63 @@ body {
 }
 
 [data-theme="1"] {
-  --w-bg-color: hsl(222, 26%, 31%);
-  --w-color: #ffffff;
-  --ts-bg-color: hsl(223, 31%, 20%);
-  --ts-justify-content: flex-start;
-  --ts-inner-bg-color: hsl(6, 63%, 50%);
-  --calcD-bg-color: hsl(224, 36%, 15%);
-  --calcD-color: white;
-  --keypad-bg-color: hsl(223, 31%, 20%);
-  --inputBtn-bg-color: #eae3da;
-  --inputBtn-color: hsl(221, 14%, 31%);
-  --inputBtn-box-shadow: 0 4px #b1a399;
-  --colvar-color: white;
-  --colvar-bg-color: hsl(225, 21%, 49%);
-  --colvar-box-shadow: 0 4px hsl(224, 28%, 35%);
-  --equal-color: white;
-  --equal-bg-color: hsl(6, 63%, 50%);
-  --equal-box-shadow: 0 4px 0 4px hsl(6, 70%, 34%);
+  --text-color: white;
+  --bg-color: #3a4764;
+  --inputs-display-bg-color: #182034;
+  --input-btn-text-color: #444b5a;
+  --input-btn-bg-color: #eae3da;
+  --input-btn-box-shadow: 0 4px #b1a399;
+  --primary-color: #d03f2f;
+  --secondary-color: #637097;
+  --reset-btn-text-color: white;
+  --reset-btn-bg-color: #637097;
+  --reset-btn-box-shadow: 0 4px #404e72;
+  --equal-btn-text-color: white;
+  --equal-btn-bg-color: #d03f2f;
+  --equal-btn-box-shadow: 0 4px #93261a;
+  --switch-justify: flex-start;
 }
 
+
 [data-theme="2"] {
-  --w-bg-color: hsl(0, 0%, 90%);
-  --w-color: hsl(60, 10%, 19%);
-  --ts-bg-color: hsl(0, 5%, 81%);
-  --ts-justify-content: center;
-  --ts-inner-bg-color: hsl(25, 98%, 40%);
-  --calcD-bg-color: hsl(0, 0%, 93%);
-  --calcD-color: white;
-  --keypad-bg-color: hsl(0, 5%, 81%);
-  --inputBtn-bg-color: hsl(45, 7%, 89%);
-  --inputBtn-color: hsl(221, 14%, 31%);
-  --inputBtn-box-shadow: 0 4px hsl(35, 11%, 61%);
-  --colvar-color: white;
-  --colvar-bg-color: hsl(185, 42%, 37%);
-  --colvar-box-shadow: 0 4px hsl(185, 58%, 25%);
-  --equal-color: white;
-  --equal-bg-color: hsl(25, 98%, 40%);
-  --equal-box-shadow: 0 4px hsl(25, 99%, 27%);
+  --text-color: #444b5a;
+  --bg-color: #e6e6e6;
+  --inputs-display-bg-color: #d1cccc;
+  --input-btn-text-color: #444b5a;
+  --input-btn-bg-color: #e5e4e1;
+  --input-btn-box-shadow: 0 4px #a69d91;
+  --primary-color: #ca5502;
+  --secondary-color: #377f86;
+  --reset-btn-text-color: white;
+  --reset-btn-bg-color: #377f86;
+  --reset-btn-box-shadow: 0 4px #1b5f65;
+  --equal-btn-text-color: white;
+  --equal-btn-bg-color: #d03f2f;
+  --equal-btn-box-shadow: 0 4px #893901;
+  --switch-justify: center;
 }
 
 [data-theme="3"] {
-  --w-bg-color: hsl(268, 75%, 9%);
-  --w-color: hsl(52, 100%, 62%);
-  --ts-bg-color: hsl(268, 71%, 12%);
-  --ts-justify-content: flex-end;
-  --ts-inner-bg-color: hsl(176, 100%, 44%);
-  --calcD-bg-color: hsl(268, 71%, 12%);
-  --calcD-color: white;
-  --keypad-bg-color: hsl(268, 71%, 12%);
-  --inputBtn-bg-color: hsl(281, 89%, 26%);
-  --inputBtn-color: hsl(52, 100%, 62%);
-  --inputBtn-box-shadow: 0 3px hsl(285, 91%, 52%);
-  --colvar-color: white;
-  --colvar-bg-color: hsl(281, 89%, 26%);
-  --colvar-box-shadow: 0 3px hsl(285, 91%, 52%);
-  --equal-color: hsl(268, 47%, 21%);
-  --equal-bg-color: hsl(176, 100%, 44%);
-  --equal-box-shadow: 0 3px hsl(177, 92%, 70%);
+   --text-color: white;
+  --bg-color: #160628;
+  --inputs-display-bg-color: #1D0934;
+  --input-btn-text-color: #FFE53D;
+  --input-btn-bg-color: #58077D;
+  --input-btn-box-shadow: 0 4px #BC15F4;
+  --primary-color: #00E0D1;
+  --secondary-color: #377f86
+  --reset-btn-text-color: white;
+  --reset-btn-bg-color: #377f86;
+  --reset-btn-box-shadow: 0 4px #1b5f65;
+  --equal-btn-text-color: white;
+  --equal-btn-bg-color: #00E0D1;
+  --equal-btn-box-shadow: 0 4px #6CF9F2;
+  --switch-justify: flex-end;
 }
 
 .wrapper {
-  background-color: var(--w-bg-color);
-  color: var(--w-color);
+  background-color: var(--bg-color);
+  color: var(--text-color);
   width: 100%;
   height: 100vh;
   display: flex;
@@ -131,15 +130,15 @@ header h1 {
   display: flex;
   align-items: center;
   padding: 3px;
-  background-color: var(--ts-bg-color);
-  justify-content: var(--ts-justify-content);
+  background-color: var(--inputs-display-bg-color);
+  justify-content: var(--switch-justify);
 }
 .theme-switcher-inner {
   height: 13px;
   width: 13px;
   border: none;
   border-radius: 50%;
-  background-color: var(--ts-inner-bg-color);
+  background-color: var(--primary-color);
 }
 
 main {
@@ -159,8 +158,8 @@ main {
   border-radius: 10px;
   font-size: 32px;
   font-weight: 700;
-  background-color: var(--calcD-bg-color);
-  color: var(--calcD-color);
+  background-color: var(--inputs-display-bg-color);
+  color: var(--text-color);
 }
 .buttons {
   padding: 20px;
@@ -169,7 +168,7 @@ main {
   gap: 20px;
   border: none;
   border-radius: 10px;
-  background-color: var(--keypad-bg-color);
+  background-color: var(--inputs-display-bg-color);
 }
 input {
   font-size: 32px;
@@ -177,19 +176,19 @@ input {
   height: 50px;
   border: none;
   border-radius: 10px;
-  color: var(--inputBtn-color);
-  background-color: var(--inputBtn-bg-color);
-  box-shadow: var(--inputBtn-box-shadow);
+  color: var(--input-btn-text-color);
+  background-color: var(--input-btn-bg-color);
+  box-shadow: var(--input-btn-box-shadow);
 }
 #reset {
   grid-column: 1 / span 2;
-  background-color: var(--colvar-bg-color);
-  color: var(--colvar-color);
-  box-shadow: var(--colvar-box-shadow);
+  background-color: var(--reset-btn-bg-color);
+  color: var(--reset-btn-text-color);
+  box-shadow: var(--reset-btn-box-shadow);
 }
 #equal {
   grid-column: 3 / span 2;
-  color: var(--equal-color);
-  background-color: var(--equal-bg-color);
-  box-shadow: var(--equal-box-shadow);
+  color: var(--equal-btn-text-color);
+  background-color: var(--equal-btn-bg-color);
+  box-shadow: var(--equal-btn-box-shadow);
 }

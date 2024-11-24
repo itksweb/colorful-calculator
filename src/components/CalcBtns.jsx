@@ -40,7 +40,7 @@ const CalcBtns = () => {
         type="button"
         value={item}
         key={item}
-        className={myClass}
+        className={`${myClass}`}
         onClick={myFunction}
         id={item === "=" ? "equal" : item}
       />
