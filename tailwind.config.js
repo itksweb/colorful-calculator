@@ -16,6 +16,11 @@ export default {
         "equal-btn-bg": "var(--equal-btn-bg-color)",
         "equal-btn-text": "var(--equal-btn-text-color)",
       },
+      boxShadow: {
+        "input-shadow": "var(--input-btn-box-shadow)",
+        "equal-shadow": "var(--equal-btn-box-shadow)",
+        "reset-shadow": "var(--reset-btn-box-shadow)",
+      },
     },
   },
   plugins: [],

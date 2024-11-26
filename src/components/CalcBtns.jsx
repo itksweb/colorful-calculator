@@ -6,28 +6,49 @@ import {
   manageDot,
   solveIt,
 } from "../store/calcSlice";
-import { btnValues } from "./utils";
+
+const btnValues = [
+  "7",
+  "8",
+  "9",
+  "del",
+  "4",
+  "5",
+  "6",
+  "+",
+  "1",
+  "2",
+  "3",
+  "-",
+  ".",
+  "0",
+  "/",
+  "*",
+  "reset",
+  "=",
+];
 
 const CalcBtns = () => {
   const dispatch = useDispatch();
 
   let buttons = btnValues.map((item) => {
-    let myClass = "";
+    let myClass = "bg-input-btn-bg text-input-btn-text shadow-input-shadow ";
     let myFunction = () => {};
     switch (item) {
       case "del":
-        myClass = "colvar";
         myFunction = () => dispatch(deleteDisplay());
         break;
       case "reset":
-        myClass = "colvar";
+        myClass =
+          "col-span-2 shadow-reset-shadow text-reset-btn-text bg-reset-btn-bg ";
         myFunction = () => dispatch(resetDisplay());
         break;
       case "=":
+        myClass =
+          "col-span-2 shadow-equal-shadow text-equal-btn-text bg-equal-btn-bg ";
         myFunction = () => dispatch(solveIt());
         break;
       case ".":
-        myClass = "colvar";
         myFunction = (val) => dispatch(manageDot(val.target.value));
         break;
       default:
@@ -40,14 +61,18 @@ const CalcBtns = () => {
         type="button"
         value={item}
         key={item}
-        className={`${myClass}`}
+        className={`${myClass} font-bold text-[32px] h-[50px] border-none rounded-[10px] `}
         onClick={myFunction}
         id={item === "=" ? "equal" : item}
       />
     );
   });
 
-  return <div className="buttons">{buttons}</div>;
+  return (
+    <div className="buttons p-5 bg-inputs-display-bg rounded-[10px] border-none grid grid-cols-4 gap-5 ">
+      {buttons}
+    </div>
+  );
 };
 
 export default CalcBtns;
