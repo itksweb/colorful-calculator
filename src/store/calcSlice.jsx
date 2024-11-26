@@ -13,14 +13,17 @@ const calcSlice = createSlice({
         : (state.theme = 1);
     },
     setDisplay(state, action) {
+      // let lastItem = state.display.slice(-1);
       let beforeOp = /^(0\.|[1-9][0-9]*\.?)(\d*)\.?(\d*)/g;
       let afterOp = /([+\-*/])(0\.|[1-9][0-9]*\.?)?(\d*)(?:\.?(\d*))$/g;
       let op = /[-+*/]+([+*/])/;
-      if (state.display === "0") {
-        state.display = action.payload;
-      } else {
-        state.display += action.payload;
-      }
+      state.display =
+        state.display === "0" ? action.payload : state.display + action.payload;
+      // if (state.display === "0") {
+      //   state.display = action.payload;
+      // } else {
+      //   state.display += action.payload;
+      // }
       if (beforeOp.test(state.display)) {
         state.display = state.display.replace(beforeOp, "$1$2$3");
       }
@@ -36,19 +39,22 @@ const calcSlice = createSlice({
     },
     deleteDisplay(state) {
       if (state.display.length > 1) {
-        state.display = state.display.replace(/.$/, "");
+        state.display = state.display.slice(0, -1);
       } else if (state.display.length === 1) {
         state.display = "0";
       }
     },
     solveIt(state) {
-      state.display = eval(state.display);
+      state.display = eval(state.display).toString();
     },
     manageDot(state, action) {
+      let lastItem = state.display.slice(-1);
       if (state.display === "0") {
         state.display = "0.";
       } else if (state.display[state.display.length - 1] === ".") {
         return;
+      } else if (["+", "-", "*", "/"].includes(lastItem)) {
+        state.display += "0" + action.payload;
       } else {
         state.display += action.payload;
       }
