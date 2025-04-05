@@ -55,10 +55,10 @@ function App() {
     >
       <Header />
       <main className="grid w-[345px] gap-4 ">
-        <div className=" flex justify-end p-5 min-h-20 items-center border-none rounded-xl text-3xl text-text-color font-bold bg-inputs-display-bg">
+        <div id="display" className=" flex justify-end p-5 min-h-20 items-center border-none rounded-xl text-3xl text-text-color font-bold bg-inputs-display-bg">
           {display}
         </div>
-        <div className="p-5 bg-inputs-display-bg rounded-[10px] border-none grid grid-cols-4 gap-5 ">
+        <div id="buttons" className="p-5 bg-inputs-display-bg rounded-[10px] border-none grid grid-cols-4 gap-5 ">
           {btnValues.map((item) => <CalcBtn item={item} key={item} btnFunction={btnFunction} />)}
         </div>
       </main>
